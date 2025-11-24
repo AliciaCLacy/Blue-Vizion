@@ -1,0 +1,214 @@
+# PALM Device — Biometric Intake Hardware  
+Engineering Documentation Package  
+Version 1.0 • Blue Vizion System • © Alicia Camille Lacy
+
+This repository contains the full engineering documentation for the PALM Biometric Intake Device, including:
+
+- Process Integration Blueprint  
+- Digital Device Diagram  
+- Hardware Specification  
+- 3D Concept Description  
+- Full Intake Step Mapping  
+- Presentation Materials  
+
+The device integrates with the Blue Vizion biometric, document, and lineage-verification platform.
+
+---
+
+## Folder Structure
+
+device/
+├─ palm-device-overview.md
+├─ palm-device-process-blueprint.md
+├─ palm-device-hardware-spec.md
+├─ palm-device-3d-concept.md
+├─ palm-device-intake-step-mapping.md
+└─ images/
+├─ palm-device-blueprint.png
+├─ palm-device-diagram.png
+└─ palm-device-3d-concept.png
+presentation/
+└─ palm-device-intake-slides.pptx
+
+
+---
+
+## Overview
+
+The PALM Device is a multi-module biometric intake unit designed to perform identity, document, and biometric verification for Blue Vizion’s unified intake workflow.  
+
+It supports:
+
+- Citizenship interpretation (audio → structured data)  
+- Document capture and verification  
+- Personal questions intake  
+- Biometric palm and thumb authentication  
+- Estate, lineage, and descendant checks  
+- Secure ledger-bound output  
+# PALM Device Overview  
+Corporate Engineering Summary
+
+## Purpose
+The PALM Device is designed to support the complete Blue Vizion Identity Intake Workflow, integrating multiple sensing, scanning, and verification modules into a single physical unit.
+
+## Key Functions
+- Voice intake (citizenship translator)  
+- Document scanning  
+- Biometric capture (palm and thumb)  
+- Identity verification  
+- Document authentication  
+- Data transfer to Blue Vizion Worker API  
+- Lineage & estate verification support  
+- Ledger-bound output packaging  
+
+## Target Deployment
+- Intake offices  
+- Remote-field verification stations  
+- Estate-lineage adjudication centers  
+- Mobile identity teams  
+# PALM Device — Process Integration Blueprint
+
+This document explains how the PALM device integrates into the Blue Vizion 20-step Intake Workflow.
+
+## Blueprint Reference
+**Image:** `images/palm-device-blueprint.png`
+
+The blueprint outlines:
+
+### 1. Octagonal Frame  
+Structural housing for all primary modules.
+
+### 2. Document Verification Rails  
+Two angled rails guiding physical documents across the scanning sensor.
+
+### 3. Biometric Thumb Module  
+Capacitive or optical sensor for thumb authentication.
+
+### 4. Palm Seal Surface  
+Top-surface palm biometric reading area (vein + print).
+
+### 5. Power and Data Ports  
+Rear panel ports for power input & data transmission (USB-C / PoE).
+
+### 6. Directional Intake Flow  
+Arrows indicate user-guided workflow:
+- Document → biometric → confirmation → ledger packet.
+# PALM Device — Hardware Specification  
+Engineering Technical Specification (ETS)
+
+---
+
+## 1. Physical Dimensions
+| Component | Measurement |
+|----------|-------------|
+| Octagonal frame | 240 mm diameter |
+| Document rail length | 170 mm |
+| Palm sensor circle | 110 mm diameter |
+| Thumb sensor pad | 38 mm × 38 mm |
+| Rear panel | 65 mm × 90 mm |
+
+---
+
+## 2. Materials
+- ABS polymer housing (UL94-V0 rated)  
+- Tempered biometric glass (Palm sensor)  
+- Anti-static document rail coating  
+- Internal aluminum mounting frame  
+
+---
+
+## 3. Sensors & Modules
+
+### 3.1 Palm Sensor  
+- Near-infrared vein pattern scanner  
+- Capacitive palmprint grid  
+- 1200 DPI equivalent resolution  
+- Anti-spoof detection module
+
+### 3.2 Thumb Sensor  
+- Capacitive fingerprint sensor  
+- 508 DPI  
+- Liveness detection enabled  
+
+### 3.3 Document Scanner  
+- CMOS linear-scan array  
+- Dual white/IR illumination  
+- OCR-ready imaging (300–600 DPI)
+
+### 3.4 Audio Module  
+- Directional microphone  
+- Noise suppression DSP  
+- Speech-to-intent preprocessing
+
+---
+
+## 4. Connectivity
+| Interface | Purpose |
+|----------|----------|
+| USB-C Data | High-speed API transfers |
+| USB-C Power | 5V/3A or PoE option |
+| BLE 5.0 | Wireless site pairing |
+| NFC | Document authentication |
+
+---
+
+## 5. Security
+- Secure enclave for biometric hash processing  
+- AES-256 end-to-end encryption  
+- Hardware-bound lineage identifiers  
+- Tamper detection (accelerometer + seal break alerts)  
+
+---
+
+## 6. Compliance
+- FIPS-201 biometric standards  
+- ISO/IEC 19794-4 palm/fingerprint formats  
+- ISO/IEC 19005 document imaging  
+# PALM Device — 3D Concept Rendering Description
+
+This document describes the industrial 3D rendering of the PALM Intake Device.
+
+## Render Reference
+**Image:** `images/palm-device-3d-concept.png`
+
+## Design Language
+- Monolithic octagonal body  
+- Sandstone matte finish  
+- Chamfered document rail with recessed scanner  
+- Floating palm sensor glass disc  
+- Illuminated PALM emblem ring  
+- Rear metal port panel  
+
+## Color Palette
+- Exterior Shell: Deep Cerulean Blue (#142A44)  
+- Sensor Housing: Matte Sand (#F6E8D0)  
+- LED Ring: Soft Neon White (#E8F3FF)  
+
+## Ergonomics
+- 12° document rail angle  
+- 3-point stabilizing base  
+- Thumb sensor located left for single-handed operation  
+
+## Production Notes
+This concept is manufacturing-ready but does not include internal PCB layout.
+# PALM Device — Intake Step Mapping  
+Mapping of Blue Vizion 20-Step Intake Workflow to PALM Device Hardware
+
+| Step | Workflow Action | Device Module Used |
+|------|-----------------|--------------------|
+| 01 | Citizenship Translator (voice) | Microphone + DSP |
+| 02 | Personal Information | User interface panel |
+| 03 | Document Scan | Document Scanner Rail |
+| 04 | Personal Questions | Audio + UI |
+| 06 | Name/Country | UI + data port |
+| 07 | Citizenship Confirmation | UI |
+| 08 | Goal Plan | UI |
+| 09 | Ledge-DB Search | Data port → BV Worker |
+| 11 | Photograph/Video | External camera module (optional) |
+| 14 | Statement Acknowledgement | UI + thumb sensor |
+| 15 | Biometric Palm/Thumb | Palm sensor + thumb sensor |
+| 16 | Estate Safe Notice | UI + document scan |
+| 17 | Document Signature | Document scanner (signature capture) |
+| 18 | Inheritance/Property | Data port → BV Worker |
+| 20 | Descendant Verification | Palm/Thumb authentication + rails |
+
