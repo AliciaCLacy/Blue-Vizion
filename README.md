@@ -638,5 +638,25 @@ export default {
     ).bind(batchId, "24-48hrs", pending.results.length, now).run();
 
     console.log(`Batch run ${batchId} processed ${pending.results.length} candidates`);
+    {
+  "fork_id": "ATL-REMOTE-001",
+  "batch_id": "BR-2025-1120",
+  "qualified": 12,
+  "awaiting_documents": 5,
+  "unqualified": 3,
+  "reason_codes": ["DOC-MISSING", "IMM-UNVERIFIED"],
+  "authorship": {
+    "uuid": "UUIDALICIACLACY",
+    "orcid": "0009-0008-9127-1581",
+    "uei": "P163FZ5WD717",
+    "author": "Alicia Camille Lacy"
+  },
+  "verification": {
+    "watermark_hash": "sha256:wmHashATL",
+    "block_seal": "ledger-entry-atl1120",
+    "notarized": true
+  }
+}
+
   }
 };
