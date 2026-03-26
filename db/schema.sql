@@ -1,3 +1,5 @@
+-- db/schema.sql
+
 CREATE TABLE IF NOT EXISTS intake (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   candidate_number TEXT UNIQUE NOT NULL,
