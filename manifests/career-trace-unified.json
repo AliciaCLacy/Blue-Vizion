@@ -8,9 +8,9 @@
       "type": "object",
       "required": ["uuid", "orcid", "uei", "author"],
       "properties": {
-        "uuid":   { "type": "string", "const": "UUIDALICIACLACY" },
-        "orcid":  { "type": "string", "const": "0009-0008-9127-1581" },
-        "uei":    { "type": "string", "const": "P163FZ5WD717" },
+        "uuid": { "type": "string", "const": "UUIDALICIACLACY" },
+        "orcid": { "type": "string", "const": "0009-0008-9127-1581" },
+        "uei": { "type": "string", "const": "P163FZ5WD717" },
         "author": { "type": "string", "const": "Alicia Camille Lacy" }
       }
     }
