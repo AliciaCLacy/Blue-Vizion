@@ -1,0 +1,53 @@
+body {
+  font-family: system-ui, -apple-system, Segoe UI, sans-serif;
+  margin: 0;
+  background: #f7f8fa;
+  color: #111;
+}
+
+header {
+  background: #0f62fe;
+  color: #fff;
+  padding: 16px;
+}
+
+h1 { margin: 0; }
+
+.authorship {
+  font-size: 12px;
+  opacity: 0.9;
+  margin-top: 6px;
+}
+
+main { padding: 16px; }
+
+section { margin-bottom: 24px; }
+
+.actions button { margin-right: 8px; }
+
+.tiles {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.tile {
+  background: #fff;
+  padding: 12px;
+  border: 1px solid #e2e6ea;
+  border-radius: 8px;
+}
+
+.list {
+  background: #fff;
+  padding: 12px;
+  border: 1px solid #e2e6ea;
+  border-radius: 8px;
+}
+
+.item {
+  padding: 8px 0;
+  border-bottom: 1px dashed #e2e6ea;
+}
+
+.item:last-child { border-bottom: none; }
