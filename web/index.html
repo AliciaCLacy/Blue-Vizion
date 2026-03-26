@@ -7,44 +7,40 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header>
-    <h1>Blue Vizion</h1>
-    <div class="authorship">
-      UUIDALICIACLACY &bull; ORCID: 0009-0008-9127-1581 &bull; UEI: P163FZ5WD717 &bull; Alicia Camille Lacy
+<header>
+  <h1>Blue Vizion</h1>
+  <div class="authorship">UUIDALICIACLACY &bull; ORCID: 0009-0008-9127-1581 &bull; UEI: P163FZ5WD717 &bull; Alicia Camille Lacy</div>
+</header>
+<main>
+  <section id="welcome">
+    <h2>Welcome</h2>
+    <div class="actions">
+      <button id="beginIntake">Begin intake</button>
+      <button id="openCompliance">Open compliance window</button>
+      <button id="endOfDay">Report end of day</button>
     </div>
-  </header>
+  </section>
 
-  <main>
-    <section id="welcome">
-      <h2>Welcome</h2>
-      <div class="actions">
-        <button id="beginIntake">Begin intake</button>
-        <button id="openCompliance">Open compliance window</button>
-        <button id="endOfDay">Report end of day</button>
-      </div>
-    </section>
+  <section>
+    <h2>Appointments</h2>
+    <div id="schedule"></div>
+  </section>
 
-    <section>
-      <h2>Appointments</h2>
-      <div id="schedule"></div>
-    </section>
+  <section>
+    <h2>Cancellations</h2>
+    <div id="cancellations"></div>
+  </section>
 
-    <section>
-      <h2>Cancellations</h2>
-      <div id="cancellations"></div>
-    </section>
+  <section>
+    <h2>Customer updates (manual)</h2>
+    <div id="updates"></div>
+  </section>
 
-    <section>
-      <h2>Customer updates (manual)</h2>
-      <div id="updates"></div>
-    </section>
-
-    <section>
-      <h2>Equity tiles</h2>
-      <div id="tiles" class="tiles"></div>
-    </section>
-  </main>
-
-  <script src="app.js"></script>
+  <section>
+    <h2>Equity tiles</h2>
+    <div id="tiles" class="tiles"></div>
+  </section>
+</main>
+<script src="app.js"></script>
 </body>
 </html>
