@@ -1,3 +1,4 @@
+// web/app.js
 const EDGE = "https://your-edge.example.com";
 const LINEAGE = {
   "X-UUID": "UUIDALICIACLACY",
@@ -14,6 +15,17 @@ async function api(path, method = "GET", body) {
   });
   if (!res.ok) throw new Error(await res.text());
   return res.json();
+}
+
+async function fetchCertificate(candidate_number) {
+  const res = await fetch(`${EDGE}/certificate/${candidate_number}`, { headers: LINEAGE });
+  if (!res.ok) { alert("Certificate not found"); return; }
+  const blob = await res.blob();
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = `${candidate_number}-certificate.pdf`;
+  link.click();
 }
 
 async function renderTiles() {
@@ -40,7 +52,7 @@ async function renderSchedule() {
     <div class="item">
       <strong>${d.candidate_number}</strong> &bull; ${d.service_code} &bull; ${d.remote_office_id} &bull; <em>${d.status}</em>
       <div><small>${d.created_at}</small></div>
-      ${d.status === "qualified" ? `<a href="#" onclick="fetchCertificate('${d.candidate_number}')">Download Certificate</a>` : ""}
+      ${d.status === "qualified" ? `<button onclick="fetchCertificate('${d.candidate_number}')">Download Certificate</button>` : ""}
     </div>`).join("");
 }
 
@@ -67,22 +79,12 @@ async function renderUpdates() {
     </div>`).join("");
 }
 
-async function fetchCertificate(candidate_number) {
-  const res = await fetch(`${EDGE}/certificate/${candidate_number}`, { headers: LINEAGE });
-  if (!res.ok) { alert("Certificate not found"); return; }
-  const blob = await res.blob();
-  const url = URL.createObjectURL(blob);
-  const link = document.createElement("a");
-  link.href = url;
-  link.download = `${candidate_number}-certificate.pdf`;
-  link.click();
-}
-
 document.getElementById("beginIntake").addEventListener("click", async () => {
   const candidate_number = prompt("Candidate number:");
   const service_code = prompt("Service code:");
   const ethnicity_code = prompt("Ethnicity code:");
   const remote_office_id = prompt("Remote office id:");
+
   const payload = {
     candidate: { candidate_number, biometric_hash: "sha256:templateHash", service_code, status: "pending" },
     agent: { agent_id: "AGENT-ATL-001", agency_name: "Diaspora Services ATL" },
@@ -90,6 +92,7 @@ document.getElementById("beginIntake").addEventListener("click", async () => {
     ethnicity: { ethnicity_code, remote_office_id },
     verification: { watermark_hash: "sha256:wmHashABC", block_seal: "ledger-entry-xyz789", notarized: true }
   };
+
   await api("/intake", "POST", payload);
   await Promise.all([renderSchedule(), renderTiles()]);
 });
