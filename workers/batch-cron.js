@@ -1,3 +1,4 @@
+// workers/batch-cron.js
 export default {
   async scheduled(event, env, ctx) {
     const now = new Date().toISOString();
